@@ -29,8 +29,8 @@ let aboutElement = `    <nav class="navbar navbar-expand-lg navbar-light bg-ligh
 </div>
 </nav>
 <div class="card">
+<h5 class="card-header">About me</h5>
 <div class="card-body">
-  <h5 class="card-title">Name: Travis Witts</h5>
   <img src="./images/profile.jpg" alt="semi-professional-photo" />
   <p class="card-text">
     <span class="bold">Phone number:</span> 0431 528 153
@@ -62,7 +62,7 @@ let aboutElement = `    <nav class="navbar navbar-expand-lg navbar-light bg-ligh
 
   <h5 class="card-text">Useful links are contained below:</h5>
   <hr />
-  <a href="./resume/resume" download class="btn btn-primary">Resume</a>
+  <a href="./resume/resume.docx" download class="btn btn-primary">Resume</a>
   <hr />
   <div class="row">
     <div class="col-md-2">
