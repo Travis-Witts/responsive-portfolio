@@ -1,6 +1,6 @@
 
 
-let aboutElement = `    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+let aboutElement = `<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: grey;">
 <a class="navbar-brand">Travis Witts</a>
 <button
   class="navbar-toggler"
@@ -28,7 +28,7 @@ let aboutElement = `    <nav class="navbar navbar-expand-lg navbar-light bg-ligh
   </ul>
 </div>
 </nav>
-<div class="card">
+<div class="card text-white bg-dark">
 <h5 class="card-header">About me</h5>
 <div class="card-body">
   <img src="./images/profile.jpg" alt="semi-professional-photo" />
@@ -52,12 +52,12 @@ let aboutElement = `    <nav class="navbar navbar-expand-lg navbar-light bg-ligh
   </p>
   <h5 class="card-text">Skills</h5>
 
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">HTML and CSS</li>
-    <li class="list-group-item">Javascript</li>
-    <li class="list-group-item">NodeJS</li>
-    <li class="list-group-item">JQuery</li>
-    <li class="list-group-item">Python</li>
+  <ul class="list-group list-group-flush bg-dark">
+    <li class="list-group-item bg-dark">HTML and CSS</li>
+    <li class="list-group-item bg-dark">Javascript</li>
+    <li class="list-group-item bg-dark">NodeJS</li>
+    <li class="list-group-item bg-dark">JQuery</li>
+    <li class="list-group-item bg-dark">Python</li>
   </ul>
 
   <h5 class="card-text">Useful links are contained below:</h5>
@@ -66,7 +66,7 @@ let aboutElement = `    <nav class="navbar navbar-expand-lg navbar-light bg-ligh
   <hr />
   <div class="row">
     <div class="col-md-2">
-    <a href="https://www.linkedin.com/in/travis-witts-95064912a/">
+    <a href="https://www.linkedin.com/in/travis-witts/">
     <img src="./images/linkedin.png"/>
   </a>
     </div>
@@ -79,7 +79,7 @@ let aboutElement = `    <nav class="navbar navbar-expand-lg navbar-light bg-ligh
 </div>
 </div>`
 
-let portfolioElement = `<nav class="navbar navbar-expand-lg navbar-light bg-light">
+let portfolioElement = `<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: grey;">
 <a class="navbar-brand">Travis Witts</a>
 <button
   class="navbar-toggler"
@@ -107,7 +107,7 @@ let portfolioElement = `<nav class="navbar navbar-expand-lg navbar-light bg-ligh
   </ul>
 </div>
 </nav>
-<div class="card">
+<div class="card text-white bg-dark">
 <h5 class="card-header">Portfolio</h5>
 <div class="card-body">
   <h5 class="card-title">Searchify</h5>
@@ -162,7 +162,7 @@ let portfolioElement = `<nav class="navbar navbar-expand-lg navbar-light bg-ligh
 </div>
 </div>`
 
-let contactElement = `<nav class="navbar navbar-expand-lg navbar-light bg-light">
+let contactElement = `<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: grey;">
 <a class="navbar-brand">Travis Witts</a>
 <button
   class="navbar-toggler"
@@ -190,7 +190,7 @@ let contactElement = `<nav class="navbar navbar-expand-lg navbar-light bg-light"
   </ul>
 </div>
 </nav>
-<div class="card">
+<div class="card text-white bg-dark fixing-height">
 <h5 class="card-header">Contact Me</h5>
 <div class="card-body">
   <form>
@@ -201,7 +201,7 @@ let contactElement = `<nav class="navbar navbar-expand-lg navbar-light bg-light"
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
       <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Enter email">
-      <small id="emailHelp" class="form-text text-muted">I never share your email with anyone else.</small>
+      <small id="emailHelp" class="form-text text-muted">I would never share your email with anyone else.</small>
     </div>
       <div class="form-group">
         <label for="message">Message</label>
@@ -217,20 +217,20 @@ const mainElement = $(".main");
 mainElement.append(aboutElement);
 
 
-$("#about").on("click", function(event) {
+$(document).on("click", ".nav-link", function(event) {
   event.preventDefault();
-  mainElement.empty();
-  mainElement.append(aboutElement);
-})
-
-$("#portfolio").on("click", function(event) {
-  event.preventDefault();
-  mainElement.empty();
-  mainElement.append(portfolioElement);
-})
-
-$("#contact").on("click", function(event) {
-  event.preventDefault();
-  mainElement.empty();
-  mainElement.append(contactElement);
+  var buttonID = $(this).attr("id");
+  switch (buttonID) {
+    case "about":
+      mainElement.empty();
+      mainElement.append(aboutElement);
+      break
+    case "portfolio":
+      mainElement.empty();
+      mainElement.append(portfolioElement);
+      break
+    case "contact":
+      mainElement.empty();
+      mainElement.append(contactElement);
+  }
 })
